@@ -1,5 +1,5 @@
 # PM Proxy
-service vendor.per_proxy /odm/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system

@@ -6,6 +6,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-impl:64 \
     android.hardware.graphics.composer@2.3-service \
+    android.hardware.graphics.composer@2.1-impl:64 \
+    android.hardware.graphics.composer@2.1-service \
 
 # Graphics allocator/mapper
 ifeq ($(TARGET_HARDWARE_GRAPHICS_V3),true)
@@ -101,7 +103,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Fingerprint
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.sony
 
 # Gatekeeper passthrough service

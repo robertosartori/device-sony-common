@@ -1,3 +1,3 @@
 #!/vendor/bin/sh
 
-echo 1 > /dev/ipa
+#echo 1 > /dev/ipa

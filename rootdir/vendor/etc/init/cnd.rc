@@ -3,7 +3,7 @@ on post-fs-data
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
 
-service vendor.cnd /odm/bin/cnd
+service vendor.cnd /vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin

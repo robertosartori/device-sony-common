@@ -29,8 +29,8 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/platform/soc/1da4000.ufshc
+    symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
 
     # qseecomd needs /dev/block/bootdevice
     # vold needs keymaster that needs qseecomd
@@ -87,14 +87,15 @@ on init
 on fs
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
-
+    #start start_dmesg
     # Start HW service manager early
     start hwservicemanager
 
     mount_all /vendor/etc/fstab.${ro.hardware} --early
 
     setprop vendor.init.earlymount.ready 1
-
+    setprop persist.media.metrics.enabled 0
+    setprop media.metrics.enabled 0
     # (Android <= 9): Remove "security.restorecon_last" xattr from /mnt/vendor/persist/
     exec u:r:vendor_toolbox:s0 root root -- /vendor/bin/toybox_vendor setfattr -x security.restorecon_last /mnt/vendor/persist/
     # (Android >= 10): Remove "security.sehash" xattr from /mnt/vendor/persist/
@@ -107,6 +108,8 @@ on late-fs
 
 on post-fs
     # Wait for qseecomd to be started
+    setprop persist.media.metrics.enabled 0
+    start start_dmesg
     wait_for_prop vendor.sys.listeners.registered true
 
 on late-fs
@@ -132,6 +135,7 @@ on late-fs
     mount_all /vendor/etc/fstab.${ro.hardware} --late
 
 on post-fs-data
+    #start start_dmesg
     # We can start netd here before in is launched in common init.rc on zygote-start
     start netd
 
@@ -389,3 +393,11 @@ on property:sys.boot_completed=1
 on property:vendor.sys.listeners.registered=true
     # load IPA FWs
     start vendor.ipastart_sh
+
+service start_dmesg /system/bin/sh /system/bin/start_dmesg
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:ueventd:s0

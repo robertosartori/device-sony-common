@@ -17,7 +17,7 @@ on post-fs-data
     chmod 660 /dev/sensors
 
 # Sensor service
-service vendor.sensors /odm/bin/sensors.qcom
+service vendor.sensors /vendor/bin/sensors.qcom
     class core
     user system
     group system

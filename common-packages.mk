@@ -120,11 +120,11 @@ PRODUCT_PACKAGES += \
     TimeKeep \
 
 # OSS Power HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     librqbalance
 
 # OSS WIFI and BT MAC tool
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     macaddrsetup
 
 # Carrier configuration
@@ -132,13 +132,13 @@ PRODUCT_PACKAGES += \
     CarrierConfig
 
 # Telephony
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ModemConfig \
     QcRilAm \
     SimDetect
 
 # QCOM Data
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     librmnetctl
 
 # RIL

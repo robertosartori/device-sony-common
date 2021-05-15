@@ -1,4 +1,4 @@
-service vendor.sensorspd /odm/bin/adsprpcd sensorspd
+service vendor.sensorspd /vendor/bin/adsprpcd sensorspd
    class main
    user system
    group system

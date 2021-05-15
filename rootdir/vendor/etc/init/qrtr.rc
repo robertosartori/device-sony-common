@@ -1,4 +1,4 @@
-service vendor.qrtr-ns /odm/bin/qrtr-ns -f
+service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
     user root
     group root

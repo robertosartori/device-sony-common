@@ -1,4 +1,4 @@
-service vendor.dpmQmiMgr /odm/bin/dpmQmiMgr
+service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
     class main
     user system
     group system

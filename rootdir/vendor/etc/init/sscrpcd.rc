@@ -1,4 +1,4 @@
-service vendor.sscrpcd /odm/bin/sscrpcd
+service vendor.sscrpcd /vendor/bin/sscrpcd
     class core
     user system
     group system wakelock

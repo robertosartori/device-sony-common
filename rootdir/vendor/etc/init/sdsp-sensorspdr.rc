@@ -1,5 +1,5 @@
 # Sensors PDR service
-service vendor.sensorspd /odm/bin/sscrpcd sensorspd
+service vendor.sensorspd /vendor/bin/sscrpcd sensorspd
     class core
     user system
     group system wakelock

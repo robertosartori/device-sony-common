@@ -1,5 +1,5 @@
 # External modem services
-service vendor.mdm_helper /odm/bin/mdm_helper
+service vendor.mdm_helper /vendor/bin/mdm_helper
     class core
     group system wakelock
     disabled

@@ -265,7 +265,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.rild.libpath=/odm/lib64/libril-qc-hal-qmi.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ril.subscription.types=NV,RUIM
 
 # OpenGLES version

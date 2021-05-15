@@ -4,7 +4,7 @@ on post-fs-data
     chown system system /data/dpm
 
 #start dpmd service
-service dpmd /odm/bin/dpmd
+service dpmd /vendor/bin/dpmd
     class late_start
     socket dpmd stream 660 root radio
     socket tcm  stream 660 root inet

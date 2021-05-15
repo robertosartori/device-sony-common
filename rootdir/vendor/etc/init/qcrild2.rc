@@ -1,4 +1,4 @@
-service vendor.qcrild2 /odm/bin/hw/qcrild -c 2
+service vendor.qcrild2 /vendor/bin/hw/qcrild -c 2
     class main
     user radio
     disabled
